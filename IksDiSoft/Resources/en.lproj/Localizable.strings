@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  IksDiSoft
+
+  Created by Максим Громов on 02.03.2022.
+  
+*/
+
+// MARK: - MainScreen
+"MainScreenNumbersLabelText" = "Простые числа";
+"MainScreenFibonacciNaumbersLabelText" = "Числа Фибоначчи";
+
