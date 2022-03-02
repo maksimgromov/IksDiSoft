@@ -88,7 +88,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 7 colors.
+  /// This `R.color` struct is generated, and contains static references to 8 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -100,6 +100,8 @@ struct R: Rswift.Validatable {
     static let frenchGray_C8C7CC = Rswift.ColorResource(bundle: R.hostingBundle, name: "frenchGray_C8C7CC")
     /// Color `manatee_888A94`.
     static let manatee_888A94 = Rswift.ColorResource(bundle: R.hostingBundle, name: "manatee_888A94")
+    /// Color `mineshaft_333333`.
+    static let mineshaft_333333 = Rswift.ColorResource(bundle: R.hostingBundle, name: "mineshaft_333333")
     /// Color `titanWhite_E7ECFF`.
     static let titanWhite_E7ECFF = Rswift.ColorResource(bundle: R.hostingBundle, name: "titanWhite_E7ECFF")
     /// Color `white_FFFFFF`.
@@ -147,6 +149,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func manatee_888A94(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.manatee_888A94, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "mineshaft_333333", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mineshaft_333333(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mineshaft_333333, compatibleWith: traitCollection)
     }
     #endif
 
@@ -205,6 +216,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func manatee_888A94(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.manatee_888A94.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "mineshaft_333333", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mineshaft_333333(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mineshaft_333333.name)
     }
     #endif
 

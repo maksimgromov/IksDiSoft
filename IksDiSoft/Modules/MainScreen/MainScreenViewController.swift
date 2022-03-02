@@ -34,8 +34,7 @@ public final class MainScreenViewController: UIViewController {
 	}
 	
 	private func configureView() {
-		print(#function)
-		view.backgroundColor(value: R.color.dodgerBlue_309CF4()!)
+		view.backgroundColor(value: R.color.white_FFFFFF()!)
 	}
 	
 	private func binding() {
@@ -47,8 +46,7 @@ public final class MainScreenViewController: UIViewController {
 		navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-		navigationController?.setNavigationBarHidden(false, animated: true)
-//		navigationController?.navigationBar.tintColor = R.color.mineshaft_333333()
+		navigationController?.navigationBar.tintColor = R.color.mineshaft_333333()
 		navigationItem.largeTitleDisplayMode = .automatic
 	}
 

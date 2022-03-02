@@ -26,6 +26,6 @@ public final class XDSoftUINavigationBarAppearance: UINavigationBarAppearance {
 	}
 	
 	private func configure() {
-		backgroundColor = R.color.white_FFFFFF()
+		backgroundColor = R.color.dodgerBlue_309CF4()
 	}
 }
