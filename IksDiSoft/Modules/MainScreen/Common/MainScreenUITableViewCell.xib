@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SegoeUI-Regular.ttf">
+            <string>SegoeUI-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainScreenUITableViewCell" rowHeight="130" id="KGk-i7-Jjw" userLabel="MainScreen UITableViewCell" customClass="MainScreenUITableViewCell" customModule="IksDiSoft" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tI-Q0-n65" userLabel="Left Label">
+                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="uR5-zT-4VP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SegoeUI-Regular" family="Segoe UI" pointSize="50"/>
+                        <color key="textColor" name="black_000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uux-5L-xFZ" userLabel="Right Label">
+                        <rect key="frame" x="157.5" y="0.0" width="162.5" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="Whp-oT-okY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SegoeUI-Regular" family="Segoe UI" pointSize="50"/>
+                        <color key="textColor" name="black_000000"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1tI-Q0-n65" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="21K-Ia-yKm"/>
+                    <constraint firstItem="uux-5L-xFZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3UX-LW-eWs"/>
+                    <constraint firstAttribute="trailing" secondItem="uux-5L-xFZ" secondAttribute="trailing" id="DSI-MO-LIg"/>
+                    <constraint firstItem="1tI-Q0-n65" firstAttribute="width" secondItem="uux-5L-xFZ" secondAttribute="width" multiplier="0.969231" id="GX5-aW-da1"/>
+                    <constraint firstItem="1tI-Q0-n65" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JkJ-Xb-Dfx"/>
+                    <constraint firstAttribute="bottom" secondItem="uux-5L-xFZ" secondAttribute="bottom" id="Riq-XF-BSU"/>
+                    <constraint firstItem="uux-5L-xFZ" firstAttribute="leading" secondItem="1tI-Q0-n65" secondAttribute="trailing" id="mfs-83-IkQ"/>
+                    <constraint firstAttribute="bottom" secondItem="1tI-Q0-n65" secondAttribute="bottom" id="uG4-rI-RQz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftLabel" destination="1tI-Q0-n65" id="E6d-ph-AwX"/>
+                <outlet property="rightLabel" destination="uux-5L-xFZ" id="0Q0-4r-q6Q"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="151"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="black_000000">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -85,15 +85,18 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 8 colors.
+  /// This `R.color` struct is generated, and contains static references to 9 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `black_000000`.
     static let black_000000 = Rswift.ColorResource(bundle: R.hostingBundle, name: "black_000000")
+    /// Color `clear_000000`.
+    static let clear_000000 = Rswift.ColorResource(bundle: R.hostingBundle, name: "clear_000000")
     /// Color `dodgerBlue_309CF4`.
     static let dodgerBlue_309CF4 = Rswift.ColorResource(bundle: R.hostingBundle, name: "dodgerBlue_309CF4")
     /// Color `frenchGray_C8C7CC`.
@@ -122,6 +125,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func black_000000(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.black_000000, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "clear_000000", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func clear_000000(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.clear_000000, compatibleWith: traitCollection)
     }
     #endif
 
@@ -196,6 +208,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "clear_000000", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func clear_000000(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.clear_000000.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "dodgerBlue_309CF4", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func dodgerBlue_309CF4(_: Void = ()) -> UIKit.UIColor? {
@@ -246,6 +266,37 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `SegoeUI-Regular.ttf`.
+    static let segoeUIRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SegoeUI-Regular", pathExtension: "ttf")
+
+    /// `bundle.url(forResource: "SegoeUI-Regular", withExtension: "ttf")`
+    static func segoeUIRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.segoeUIRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `SegoeUI-Regular`.
+    static let segoeUIRegular = Rswift.FontResource(fontName: "SegoeUI-Regular")
+
+    /// `UIFont(name: "SegoeUI-Regular", size: ...)`
+    static func segoeUIRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: segoeUIRegular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.segoeUIRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SegoeUI-Regular' could not be loaded, is 'SegoeUI-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -276,10 +327,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `LaunchScreen`.
     static let launchScreen = _R.nib._LaunchScreen()
+    /// Nib `MainScreenUITableViewCell`.
+    static let mainScreenUITableViewCell = _R.nib._MainScreenUITableViewCell()
     /// Nib `MainScreenViewController`.
     static let mainScreenViewController = _R.nib._MainScreenViewController()
 
@@ -288,6 +341,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.launchScreen) instead")
     static func launchScreen(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MainScreenUITableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mainScreenUITableViewCell) instead")
+    static func mainScreenUITableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mainScreenUITableViewCell)
     }
     #endif
 
@@ -303,9 +364,21 @@ struct R: Rswift.Validatable {
       return R.nib.launchScreen.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func mainScreenUITableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MainScreenUITableViewCell? {
+      return R.nib.mainScreenUITableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MainScreenUITableViewCell
+    }
+
     static func mainScreenViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.mainScreenViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `MainScreenUITableViewCell`.
+    static let mainScreenUITableViewCell: Rswift.ReuseIdentifier<MainScreenUITableViewCell> = Rswift.ReuseIdentifier(identifier: "MainScreenUITableViewCell")
 
     fileprivate init() {}
   }
@@ -462,6 +535,20 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "dodgerBlue_309CF4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'dodgerBlue_309CF4' is used in nib 'LaunchScreen', but couldn't be loaded.") }
           if UIKit.UIColor(named: "white_FFFFFF", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'white_FFFFFF' is used in nib 'LaunchScreen', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MainScreenUITableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = MainScreenUITableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "MainScreenUITableViewCell"
+      let name = "MainScreenUITableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MainScreenUITableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MainScreenUITableViewCell
       }
 
       fileprivate init() {}

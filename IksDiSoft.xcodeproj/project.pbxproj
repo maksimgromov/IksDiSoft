@@ -21,6 +21,10 @@
 		81D052E727CFC03C0031B609 /* XDSoftUINavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052DC27CFC03B0031B609 /* XDSoftUINavigationBarAppearance.swift */; };
 		81D052E827CFC03C0031B609 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052DE27CFC03B0031B609 /* UIView + Extension.swift */; };
 		81D052EC27CFC0970031B609 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052EB27CFC0970031B609 /* R.generated.swift */; };
+		81D052EE27CFC3260031B609 /* MainScreenUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052ED27CFC3260031B609 /* MainScreenUITableView.swift */; };
+		81D052F127CFC4480031B609 /* MainScreenUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052EF27CFC4480031B609 /* MainScreenUITableViewCell.swift */; };
+		81D052F227CFC4480031B609 /* MainScreenUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D052F027CFC4480031B609 /* MainScreenUITableViewCell.xib */; };
+		81D052F527CFCC9B0031B609 /* SegoeUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		81D052DC27CFC03B0031B609 /* XDSoftUINavigationBarAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSoftUINavigationBarAppearance.swift; sourceTree = "<group>"; };
 		81D052DE27CFC03B0031B609 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		81D052EB27CFC0970031B609 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		81D052ED27CFC3260031B609 /* MainScreenUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITableView.swift; sourceTree = "<group>"; };
+		81D052EF27CFC4480031B609 /* MainScreenUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITableViewCell.swift; sourceTree = "<group>"; };
+		81D052F027CFC4480031B609 /* MainScreenUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenUITableViewCell.xib; sourceTree = "<group>"; };
+		81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeUI-Regular.ttf"; sourceTree = "<group>"; };
 		FDB397FC78E269747EC17E6A /* Pods-IksDiSoft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IksDiSoft.debug.xcconfig"; path = "Target Support Files/Pods-IksDiSoft/Pods-IksDiSoft.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +137,9 @@
 		81D052D027CFC03B0031B609 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				81D052ED27CFC3260031B609 /* MainScreenUITableView.swift */,
+				81D052EF27CFC4480031B609 /* MainScreenUITableViewCell.swift */,
+				81D052F027CFC4480031B609 /* MainScreenUITableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -137,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				81D052D827CFC03B0031B609 /* Assets.xcassets */,
+				81D052F327CFCC9B0031B609 /* Fonts */,
 				81D052D427CFC03B0031B609 /* Localizable.strings */,
 				81D052D627CFC03B0031B609 /* InfoPlist.strings */,
 			);
@@ -167,6 +179,14 @@
 				81D052EB27CFC0970031B609 /* R.generated.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		81D052F327CFCC9B0031B609 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DCF5F94CE171DCFC57E0E7C7 /* Pods */ = {
@@ -244,7 +264,9 @@
 				81D052E527CFC03C0031B609 /* InfoPlist.strings in Resources */,
 				81D052E427CFC03C0031B609 /* Localizable.strings in Resources */,
 				81D052E027CFC03C0031B609 /* MainScreenViewController.xib in Resources */,
+				81D052F227CFC4480031B609 /* MainScreenUITableViewCell.xib in Resources */,
 				81D052E627CFC03C0031B609 /* Assets.xcassets in Resources */,
+				81D052F527CFCC9B0031B609 /* SegoeUI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,12 +340,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D052E327CFC03C0031B609 /* MainScreenViewController.swift in Sources */,
+				81D052EE27CFC3260031B609 /* MainScreenUITableView.swift in Sources */,
 				81D052E727CFC03C0031B609 /* XDSoftUINavigationBarAppearance.swift in Sources */,
 				81D052E227CFC03C0031B609 /* MainScreenAssembly.swift in Sources */,
 				81D052EC27CFC0970031B609 /* R.generated.swift in Sources */,
 				81D052B727CFBF350031B609 /* AppDelegate.swift in Sources */,
 				81D052E827CFC03C0031B609 /* UIView + Extension.swift in Sources */,
 				81D052B927CFBF350031B609 /* SceneDelegate.swift in Sources */,
+				81D052F127CFC4480031B609 /* MainScreenUITableViewCell.swift in Sources */,
 				81D052E127CFC03C0031B609 /* MainScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
