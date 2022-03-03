@@ -12,7 +12,7 @@ import Foundation
 public final class MainScreenViewModel {
 	
 	public enum Action {
-		case loadMoreData
+		case loadData
 	}
 	
 	// MARK: - Data
@@ -22,75 +22,69 @@ public final class MainScreenViewModel {
 	private var cancellables: Set<AnyCancellable> = []
 	@Published
 	public var screenType: MainScreenAssembly.MainSreenType = .primeNumbers
-	private var numbersGenerationUpperBound: Int = 150
+	private var numbersGenerationUpperBound: Int = 100
 	
 	public init(screenType: MainScreenAssembly.MainSreenType) {
 		self.screenType = screenType
-		preloadData()
+		loadData()
 		action
 			.receive(on: DispatchQueue.main)
 			.sink { [weak self] action in
 				switch action {
 					
-				case .loadMoreData:
-					self?.loadMoreData()
+				case .loadData:
+					self?.loadData()
 				}
 			}
 			.store(in: &cancellables)
 	}
-	
-	private func preloadData() {
-		switch screenType {
-			
-		case .primeNumbers:
-			tableViewModel.append(contentsOf: eratosthenesSieve(to: numbersGenerationUpperBound))
-		case .fibonacciNumbers:
-			fibonacci(to: numbersGenerationUpperBound)
-		}
-	}
-	
-	private func loadMoreData() {
+		
+	private func loadData() {
 		numbersGenerationUpperBound += 50
 		switch screenType {
 			
 		case .primeNumbers:
-			DispatchQueue.global(qos: .userInteractive).async {
-				self.tableViewModel.append(contentsOf: self.eratosthenesSieve(to: self.numbersGenerationUpperBound).filter {!self.tableViewModel.contains($0)})
-			}
+			eratosthenesSieve(to: numbersGenerationUpperBound)
 		case .fibonacciNumbers:
 			fibonacci(to: numbersGenerationUpperBound)
 		}
 	}
 	
-	private func eratosthenesSieve(to n: Int) -> [BInt] {
-		var composite = Array(repeating: false, count: n + 1)
-		var primes: [BInt] = []
-		if n >= 150 {
-			let d = Double(n)
-			let upperBound = Int(d / (log(d) - 4))
-			primes.reserveCapacity(upperBound)
-		} else {
-			primes.reserveCapacity(n)
-		}
-		
-		let squareRootN = Int(Double(n).squareRoot())
-		var p = 2
-		while p <= squareRootN {
-			if !composite[p] {
-				primes.append(BInt(p))
-				for q in stride(from: p * p, through: n, by: p) {
-					composite[q] = true
+	private func eratosthenesSieve(to n: Int) {
+		DispatchQueue.global(qos: .userInteractive).async {
+			var composite = Array(repeating: false, count: n + 1)
+			var primes: [BInt] = []
+			if n >= 150 {
+				let d = Double(n)
+				let upperBound = Int(d / (log(d) - 4))
+				primes.reserveCapacity(upperBound)
+			} else {
+				primes.reserveCapacity(n)
+			}
+			
+			let squareRootN = Int(Double(n).squareRoot())
+			var p = 2
+			while p <= squareRootN {
+				if !composite[p] {
+					primes.append(BInt(p))
+					for q in stride(from: p * p, through: n, by: p) {
+						composite[q] = true
+					}
 				}
+				p += 1
 			}
-			p += 1
-		}
-		while p <= n {
-			if !composite[p] {
-				primes.append(BInt(p))
+			while p <= n {
+				if !composite[p] {
+					primes.append(BInt(p))
+				}
+				p += 1
 			}
-			p += 1
+			if (self.tableViewModel.count == 0) {
+				self.tableViewModel.append(contentsOf: primes)
+			} else {
+				self.tableViewModel.append(contentsOf: primes.filter {!self.tableViewModel.contains($0)})
+			}
 		}
-		return primes
 	}
 	
 	private func fibonacci(to n: Int) {

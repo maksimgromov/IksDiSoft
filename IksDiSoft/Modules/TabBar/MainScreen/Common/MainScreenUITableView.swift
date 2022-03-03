@@ -12,7 +12,7 @@ import UIKit
 public final class MainScreenUITableView: UITableView {
 	
 	public enum Action {
-		case loadMoreData
+		case loadData
 	}
 
 	// MARK: - Data
@@ -70,7 +70,7 @@ extension MainScreenUITableView: UITableViewDataSourcePrefetching {
 	public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 		guard let lastRow = indexPaths.map({$0.row}).last else { return }
 		if lastRow + 25 > tableView.numberOfRows(inSection: 0) {
-			action.send(.loadMoreData)
+			action.send(.loadData)
 		}
 	}
 }

@@ -63,8 +63,8 @@ public final class MainScreenViewController: UIViewController {
 			.sink { [weak self] action in
 				switch action {
 					
-				case .loadMoreData:
-					self?.viewModel.action.send(.loadMoreData)
+				case .loadData:
+					self?.viewModel.action.send(.loadData)
 				}
 			}
 			.store(in: &cancellables)
