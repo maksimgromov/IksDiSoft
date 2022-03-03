@@ -1,7 +1,7 @@
 #  Prime and Fibonacci Numbers
 
 
->This is test app for XDSoft Company. Simple app with R.Swift adn BigNumber Cocoapods, Combine Framework with MVVM Architecture patters.
+>This is test app for XDSoft Company. Simple app with R.Swift adn BigNumber Cocoapods, Combine Framework with MVVM Architecture patter.
 
 
 ![](Documentation/launchscreen.png)
