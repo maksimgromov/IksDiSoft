@@ -22,7 +22,7 @@ public final class MainScreenViewModel {
 	private var cancellables: Set<AnyCancellable> = []
 	@Published
 	public var screenType: MainScreenAssembly.MainSreenType = .primeNumbers
-	private var numbersGenerationUpperBound: Int = 50
+	private var numbersGenerationUpperBound: Int = 150
 	
 	public init(screenType: MainScreenAssembly.MainSreenType) {
 		self.screenType = screenType
