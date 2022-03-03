@@ -98,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				81D052EA27CFC0970031B609 /* Environment */,
-				81D052C427CFBF370031B609 /* Info.plist */,
 				81D052DD27CFC03B0031B609 /* Extensions */,
 				81D052CA27CFC03B0031B609 /* Modules */,
 				81D052DB27CFC03B0031B609 /* Shared Resources */,
@@ -178,6 +177,7 @@
 			children = (
 				81D052B627CFBF350031B609 /* AppDelegate.swift */,
 				81D052B827CFBF350031B609 /* SceneDelegate.swift */,
+				81D052C427CFBF370031B609 /* Info.plist */,
 				81D052EB27CFC0970031B609 /* R.generated.swift */,
 			);
 			path = Environment;
@@ -516,7 +516,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74MK62SNNU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IksDiSoft/Info.plist;
+				INFOPLIST_FILE = IksDiSoft/Environment/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(CFBundleDisplayName)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -547,7 +547,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74MK62SNNU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IksDiSoft/Info.plist;
+				INFOPLIST_FILE = IksDiSoft/Environment/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(CFBundleDisplayName)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
