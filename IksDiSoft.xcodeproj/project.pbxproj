@@ -25,6 +25,7 @@
 		81D052F127CFC4480031B609 /* MainScreenUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052EF27CFC4480031B609 /* MainScreenUITableViewCell.swift */; };
 		81D052F227CFC4480031B609 /* MainScreenUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D052F027CFC4480031B609 /* MainScreenUITableViewCell.xib */; };
 		81D052F527CFCC9B0031B609 /* SegoeUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */; };
+		81D052F827D0236E0031B609 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D052F727D0236E0031B609 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		81D052EF27CFC4480031B609 /* MainScreenUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITableViewCell.swift; sourceTree = "<group>"; };
 		81D052F027CFC4480031B609 /* MainScreenUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenUITableViewCell.xib; sourceTree = "<group>"; };
 		81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeUI-Regular.ttf"; sourceTree = "<group>"; };
+		81D052F727D0236E0031B609 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FDB397FC78E269747EC17E6A /* Pods-IksDiSoft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IksDiSoft.debug.xcconfig"; path = "Target Support Files/Pods-IksDiSoft/Pods-IksDiSoft.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				81D052CB27CFC03B0031B609 /* LaunchScreen */,
-				81D052CD27CFC03B0031B609 /* MainScreen */,
+				81D052F627D0201C0031B609 /* TabBar */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -187,6 +189,15 @@
 				81D052F427CFCC9B0031B609 /* SegoeUI-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		81D052F627D0201C0031B609 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				81D052F727D0236E0031B609 /* TabBarController.swift */,
+				81D052CD27CFC03B0031B609 /* MainScreen */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		DCF5F94CE171DCFC57E0E7C7 /* Pods */ = {
@@ -341,6 +352,7 @@
 			files = (
 				81D052E327CFC03C0031B609 /* MainScreenViewController.swift in Sources */,
 				81D052EE27CFC3260031B609 /* MainScreenUITableView.swift in Sources */,
+				81D052F827D0236E0031B609 /* TabBarController.swift in Sources */,
 				81D052E727CFC03C0031B609 /* XDSoftUINavigationBarAppearance.swift in Sources */,
 				81D052E227CFC03C0031B609 /* MainScreenAssembly.swift in Sources */,
 				81D052EC27CFC0970031B609 /* R.generated.swift in Sources */,
@@ -380,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -441,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

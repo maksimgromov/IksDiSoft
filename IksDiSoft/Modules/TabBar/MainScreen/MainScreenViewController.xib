@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-T2-uou" userLabel="MainScreen UITableView" customClass="MainScreenUITableView" customModule="IksDiSoft" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" name="white_FFFFFF"/>
                 </tableView>
             </subviews>
@@ -29,7 +29,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YHn-T2-uou" secondAttribute="trailing" id="560-9j-PUB"/>
-                <constraint firstAttribute="bottom" secondItem="YHn-T2-uou" secondAttribute="bottom" id="TvA-Eq-vsk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YHn-T2-uou" secondAttribute="bottom" id="TvA-Eq-vsk"/>
                 <constraint firstItem="YHn-T2-uou" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uXW-rw-9RO"/>
                 <constraint firstItem="YHn-T2-uou" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wW1-Dn-wMm"/>
             </constraints>

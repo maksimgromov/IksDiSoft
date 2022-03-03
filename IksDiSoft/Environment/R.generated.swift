@@ -89,10 +89,12 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 9 colors.
+  /// This `R.color` struct is generated, and contains static references to 10 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
+    /// Color `blackOpacity16_000000`.
+    static let blackOpacity16_000000 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity16_000000")
     /// Color `black_000000`.
     static let black_000000 = Rswift.ColorResource(bundle: R.hostingBundle, name: "black_000000")
     /// Color `clear_000000`.
@@ -116,6 +118,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "blackOpacity16_000000", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func blackOpacity16_000000(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.blackOpacity16_000000, compatibleWith: traitCollection)
     }
     #endif
 
@@ -196,6 +207,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func accentColor(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.accentColor.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "blackOpacity16_000000", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func blackOpacity16_000000(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.blackOpacity16_000000.name)
     }
     #endif
 
@@ -292,6 +311,35 @@ struct R: Rswift.Validatable {
 
     static func validate() throws {
       if R.font.segoeUIRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SegoeUI-Regular' could not be loaded, is 'SegoeUI-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 0 images.
+  struct image {
+    /// This `R.image.tabBar` struct is generated, and contains static references to 2 images.
+    struct tabBar {
+      /// Image `main`.
+      static let main = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/main")
+      /// Image `second`.
+      static let second = Rswift.ImageResource(bundle: R.hostingBundle, name: "TabBar/second")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "main", bundle: ..., traitCollection: ...)`
+      static func main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.main, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "second", bundle: ..., traitCollection: ...)`
+      static func second(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.tabBar.second, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
     }
 
     fileprivate init() {}
@@ -448,18 +496,56 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
     struct localizable {
-      /// en translation: Простые числа
-      ///
-      /// Locales: en, ru
-      static let mainScreenNumbersLabelText = Rswift.StringResource(key: "MainScreenNumbersLabelText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// en translation: Числа Фибоначчи
+      /// en translation: Fibonacci Numbers
       ///
       /// Locales: en, ru
       static let mainScreenFibonacciNaumbersLabelText = Rswift.StringResource(key: "MainScreenFibonacciNaumbersLabelText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Fibonacci Numbers
+      ///
+      /// Locales: en, ru
+      static let tabBarSecondText = Rswift.StringResource(key: "TabBarSecondText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Prime Numbers
+      ///
+      /// Locales: en, ru
+      static let mainScreenNumbersLabelText = Rswift.StringResource(key: "MainScreenNumbersLabelText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Prime Numbers
+      ///
+      /// Locales: en, ru
+      static let tabBarMainText = Rswift.StringResource(key: "TabBarMainText", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
 
-      /// en translation: Простые числа
+      /// en translation: Fibonacci Numbers
+      ///
+      /// Locales: en, ru
+      static func mainScreenFibonacciNaumbersLabelText(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("MainScreenFibonacciNaumbersLabelText", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "MainScreenFibonacciNaumbersLabelText"
+        }
+
+        return NSLocalizedString("MainScreenFibonacciNaumbersLabelText", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Fibonacci Numbers
+      ///
+      /// Locales: en, ru
+      static func tabBarSecondText(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("TabBarSecondText", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "TabBarSecondText"
+        }
+
+        return NSLocalizedString("TabBarSecondText", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Prime Numbers
       ///
       /// Locales: en, ru
       static func mainScreenNumbersLabelText(preferredLanguages: [String]? = nil) -> String {
@@ -474,19 +560,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("MainScreenNumbersLabelText", bundle: bundle, comment: "")
       }
 
-      /// en translation: Числа Фибоначчи
+      /// en translation: Prime Numbers
       ///
       /// Locales: en, ru
-      static func mainScreenFibonacciNaumbersLabelText(preferredLanguages: [String]? = nil) -> String {
+      static func tabBarMainText(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("MainScreenFibonacciNaumbersLabelText", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("TabBarMainText", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "MainScreenFibonacciNaumbersLabelText"
+          return "TabBarMainText"
         }
 
-        return NSLocalizedString("MainScreenFibonacciNaumbersLabelText", bundle: bundle, comment: "")
+        return NSLocalizedString("TabBarMainText", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

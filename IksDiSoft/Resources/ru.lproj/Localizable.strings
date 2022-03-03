@@ -6,6 +6,10 @@
   
 */
 
+// MARK: - TabBar
+"TabBarMainText" = "Простые числа";
+"TabBarSecondText" = "Числа Фибоначчи";
+
 // MARK: - MainScreen
 "MainScreenNumbersLabelText" = "Простые числа";
 "MainScreenFibonacciNaumbersLabelText" = "Числа Фибоначчи";

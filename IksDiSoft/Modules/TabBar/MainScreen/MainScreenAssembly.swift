@@ -8,9 +8,16 @@
 import Foundation
 
 public final class MainScreenAssembly {
-    
+	
+	public enum MainSreenType {
+		case fibonacciNumbers
+		case primeNumbers
+	}
+
+	// MARK: - Data
     private var viewController: MainScreenViewController?
-    
+	private var screenType: MainSreenType = .primeNumbers
+
     public var view: MainScreenViewController {
         guard let view = viewController else {
             viewController = MainScreenViewController()
@@ -19,9 +26,17 @@ public final class MainScreenAssembly {
         }
         return view
     }
+	
+	public convenience init() {
+		self.init(screenType: .primeNumbers)
+	}
+	
+	public init(screenType: MainScreenAssembly.MainSreenType) {
+		self.screenType = screenType
+	}
     
     private func configureModule(_ view: MainScreenViewController?) {
         guard let view = view else { return }
-        view.viewModel = MainScreenViewModel()
+		view.viewModel = MainScreenViewModel(screenType: screenType)
     }
 }

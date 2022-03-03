@@ -6,7 +6,11 @@
   
 */
 
+// MARK: - TabBar
+"TabBarMainText" = "Prime Numbers";
+"TabBarSecondText" = "Fibonacci Numbers";
+
 // MARK: - MainScreen
-"MainScreenNumbersLabelText" = "Простые числа";
-"MainScreenFibonacciNaumbersLabelText" = "Числа Фибоначчи";
+"MainScreenNumbersLabelText" = "Prime Numbers";
+"MainScreenFibonacciNaumbersLabelText" = "Fibonacci Numbers";
 
